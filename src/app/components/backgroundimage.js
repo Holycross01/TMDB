@@ -40,8 +40,8 @@ const Backgroundimage = () => {
        <h1 className='text-white text-5xl font-bold'>Welcome.</h1>
        <h3 className='text-white text-2xl md:text-3xl font-semibold'>Millions of movies, Tv shows and people to discover. Explore now</h3>
       <div className='relative md:mt-12 mt-5'>
-        <input type="text" className='bg-white flex-1 w-full py-[10px] px-[20px] rounded-full outline-none' />
-       <button className='bg-green-500 absolute top-0 right-0 py-[10px] px-[20px] rounded-full'>search</button>
+        <input type="text" className='bg-white flex-1 w-full py-[10px] px-[20px] rounded-full outline-none' placeholder="search..." />
+       <button className='absolute top-0 right-0 py-[10px] px-[25px] rounded-full bg-gradient-to-r from-[#1ed5a9] to-[#01b4e4] text-white' >search</button>
       </div>
        
      
