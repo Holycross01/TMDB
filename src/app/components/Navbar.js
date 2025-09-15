@@ -39,8 +39,8 @@ const Navbar = () => {
                               <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Now Playing</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Upcoming</Link></li>
+                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Airing Today</Link></li>
+                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">on Tv</Link></li>
                                  <li><Link href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Top rated</Link></li>
                             </ul>
                          </div>
@@ -50,10 +50,8 @@ const Navbar = () => {
                         <Link href="/" className='p-[8px] text-[15px]'>People</Link>
                           <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
-                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Now Playing</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Upcoming</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Top rated</Link></li>
+                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular People</Link></li>
+                             
                             </ul>
                          </div>
                         </div>
@@ -63,10 +61,11 @@ const Navbar = () => {
                    <Link href="/" className='p-[8px] text-[15px]'>More</Link>
                      <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
-                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Now Playing</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Upcoming</Link></li>
-                                 <li><Link href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Top rated</Link></li>
+                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Discussion</Link></li>
+                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Leaderboard</Link></li>
+                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Support</Link></li>
+                                 <li><Link href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Api Documentation</Link></li>
+                                
                             </ul>
                          </div>
                     </div>

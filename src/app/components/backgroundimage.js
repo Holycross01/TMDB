@@ -1,22 +1,15 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 // import {config} from '@Lib/Api';
-import { config } from '../screen/Lib/Api'     
-import axios from "axios"
+import { config, tmdbApi } from '../screen/Lib/Api'     
+
 
 const Backgroundimage = () => {
     const [backDrop, setBackDrop]= useState(null)
 
     const FetchBackImage = async ()=>{
         try{
-          const response = await axios.get(`${config.baseUrl}${config.endpoints.backgroundApi}`,
-                {
-                    headers:{
-                        Authorization:`Bearer ${config.configKey}`,
-                        "content-type":'application/json',
-                    }
-                }
-            );
+          const response = await tmdbApi.get(config.endpoints.backgroundApi);
             const data = response.data
             if(data.results?.length > 0){
                 const randomItem = data.results[Math.floor(Math.random()* data.results.length)]
