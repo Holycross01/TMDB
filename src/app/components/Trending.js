@@ -8,6 +8,15 @@ const Trending = () => {
     const [today, setToday] = useState([]);
     const [thisWeek, setThisWeek] = useState([]);
 
+
+
+     const [open, setOpen] = useState(false);
+      const handleSelect = (value) => {
+        setActive(value);
+        setOpen(false);
+      };
+
+
     const fetchMovieToday = async () => {
         try {
             const { data } = await tmdbApi.get(config.endpoints.today);
@@ -45,7 +54,7 @@ const Trending = () => {
 
   <div className='flex items-center  space-x-2 justify-center md:justify-start'>
     <h2 className='font-semibold text-[1.4em]'>Trending</h2>
-  <div className="relative min-w-[200px] h-[30px] border border-gray-800 rounded-full flex items-center justify-between text-sm text-white font-medium px-1">
+  <div className="  hidden relative min-w-[200px] h-[30px] border border-gray-800 rounded-full sm:flex items-center justify-between text-sm text-white font-medium px-1">
       {/* Sliding indicator */}
       <div
         className={`absolute top-0 left-0 h-[20px] bg-white rounded-full transition-all duration-300 font-semibold ${
@@ -73,6 +82,43 @@ const Trending = () => {
         This Week
       </div>
     </div>
+
+
+       {/* MOBILENAV TOGGLE DIV */}
+    <div className=" sm:hidden relative w-[120px]">
+      {/* Button that shows the active option */}
+      <button
+        onClick={() => setOpen(!open)}
+        className=" w-full h-[30px] rounded-tl-sm rounded-tr-sm border border-gray-800 bg-[#032541] text-[#1ed5a9] text-sm font-medium px-2 flex items-center justify-between"
+      >
+        {active === "today" ? "Today" : "This Week"}
+        <span className="ml-2 ">▼</span>
+      </button>
+
+      {/* Dropdown options */}
+      {open && (
+        <div className="absolute w-max min-w-full bg-white  shadow-lg z-50">
+          {active !== "today" && (
+            <div
+              onClick={() => handleSelect("today")}
+              className="px-3 py-1 text-sm bg-gradient-to-r from-[#c0fecf] to-[#1ed5a9] rounded-bl-sm rounded-br-sm cursor-pointer hover:bg-gray-100"
+            >
+              Today
+            </div>
+          )}
+          {active !== "week" && (
+            <div
+              onClick={() => handleSelect("week")}
+              className="px-3 py-1 text-sm bg-gradient-to-r from-[#c0fecf] to-[#1ed5a9] rounded-bl-sm rounded-br-sm cursor-pointer hover:bg-gray-100"
+            >
+              This Week
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+
+
   </div>
 
   <div className='flex mt-4 overflow-hidden overflow-x-auto '>
@@ -89,8 +135,8 @@ const Trending = () => {
               )}
               </div>
         
-              <h2 className='font-bold'>{movie.original_title || movie.name}</h2>  
-              <h3 className='font-lighter'>{movie.release_date || movie.first_air_date}</h3> 
+              <h2 className='font-bold text-sm'>{movie.original_title || movie.name}</h2>  
+              <h3 className='font-lighter text-[#00000099] text-sm'>{movie.release_date || movie.first_air_date}</h3> 
               {/* {movie.vote_average && (
                 <span className='bg-black text-white'>
                   {Math.round(movie.vote_average * 10)}%
