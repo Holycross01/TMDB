@@ -45,18 +45,18 @@ const Trending = () => {
 
   <div className='flex items-center  space-x-2 justify-center md:justify-start'>
     <h2 className='font-semibold text-[1.4em]'>Trending</h2>
-  <div className="relative min-w-[200px] h-[28px] border border-gray-800 rounded-full flex items-center justify-between text-sm text-white font-medium px-1">
+  <div className="relative min-w-[200px] h-[30px] border border-gray-800 rounded-full flex items-center justify-between text-sm text-white font-medium px-1">
       {/* Sliding indicator */}
       <div
-        className={`absolute top-1 left-1 h-[20px] bg-white rounded-full transition-all duration-300 font-semibold ${
-          active === 'week' ? 'translate-x-[100%]' : ''
+        className={`absolute top-0 left-0 h-[20px] bg-white rounded-full transition-all duration-300 font-semibold ${
+          active === 'week' ? 'translate-x-full' : ''
         }`}
       ></div>
 
       {/* Option 1: Today */}
       <div
         onClick={() => setActive('today')}
-        className={`z-10 flex-1 text-sm text-center cursor-pointer transition-all duration-300 font-semibold ${
+        className={`z-10 flex-1 text-sm text-center py-0.5 cursor-pointer transition-all duration-300 font-semibold ${
           active === 'today' ? ' bg-[#032541] text-[#1ed5a9] rounded-full ' : 'text-[#032541]'
         }`}
       >
@@ -66,7 +66,7 @@ const Trending = () => {
       {/* Option 2: This Week */}
       <div
         onClick={() => setActive('week')}
-        className={`z-10 flex-1 text-sm text-center  cursor-pointer transition-all durration-300 font-semibold  ${
+        className={`z-10 flex-1 text-sm text-center py-0.5  cursor-pointer transition-all durration-300 font-semibold  ${
           active === 'week' ? ' bg-[#032541] text-[#1ed5a9] rounded-full ' : 'text-[#032541]'
         }`}
       >
@@ -82,16 +82,24 @@ const Trending = () => {
             <li key={movie.id} >
               <div className='w-[150px] h-[225px] relative rounded-md overflow-hidden'>
                 <Image style={{ objectFit: 'cover'}} fill sizes='500px' src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}`: '/fallback-image.jpg'} alt='movie-title'/>
+                   {movie.vote_average && (
+                <span className={`w-8 h-8 text-xs bg-black absolute bottom-2 left-2 text-white flex items-center justify-center border-2 font-bold  rounded-full ${Math.round(movie.vote_average * 10) >= 70 ? "border-green-800 bg-black/70" : "border-yellow-500 bg-black/70"}`}>
+                  {Math.round(movie.vote_average * 10)}%
+                </span>
+              )}
               </div>
         
-          <h2 className='font-bold'>{movie.original_title || movie.name}</h2>  
-          <h3 className='font-lighter'>{movie.release_date || movie.first_air_date}</h3> 
-            </li> 
-
+              <h2 className='font-bold'>{movie.original_title || movie.name}</h2>  
+              <h3 className='font-lighter'>{movie.release_date || movie.first_air_date}</h3> 
+              {/* {movie.vote_average && (
+                <span className='bg-black text-white'>
+                  {Math.round(movie.vote_average * 10)}%
+                </span>
+              )} */}
+            </li>
         ))}
      </ul>
     ) : (<p>loading..</p>)}
-
 
   </div>
 
