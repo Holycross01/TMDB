@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <div className='bg-gradient-to-r from-[#031d33] to-[#032541] py-12 lg:py-20  px-5'>
-        <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-center space-x-7 '>
+        <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-center lg:space-x-15 '>
             <div className='space-y-4'>
                 <Image src='/images/mobile-logo.svg'className='hidden lg:block -mt-6' width={130} height={50} alt='tmdb-mobile-logo'/>
                 <span className='bg-white rounded-md flex justify-center items-center px-3 py-2 text-[#01b4e4] font-bold  lg:mt-10'>Hi cross!</span>
