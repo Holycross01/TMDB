@@ -7,7 +7,8 @@ export const config = {
     home: "/home",
     backgroundApi: '/3/trending/all/day?language=en-US', // Specific endpoint for background data
     today: '/3/movie/now_playing',
-    weekly: '/3/tv/on_the_air'
+    weekly: '/3/tv/on_the_air',
+    trailers:'/3/trending/tv/day'
   },
 };
 
