@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-// import {config} from '@Lib/Api';
-import { config, tmdbApi } from '../screen/Lib/Api'     
+import { config, tmdbApi } from '@/app/screen/Lib/Api'     
 
 
 const Backgroundimage = () => {

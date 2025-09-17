@@ -1,7 +1,9 @@
  'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
-import { tmdbApi, config } from '../screen/Lib/Api';
+import { tmdbApi, config } from '@/app/screen/Lib/Api';
+
+
 
 const Trending = () => {
     const [active, setActive] = useState('today');
@@ -11,6 +13,7 @@ const Trending = () => {
 
 
      const [open, setOpen] = useState(false);
+
       const handleSelect = (value) => {
         setActive(value);
         setOpen(false);
@@ -92,12 +95,16 @@ const Trending = () => {
         className=" w-full h-[30px] rounded-tl-sm rounded-tr-sm border border-gray-800 bg-[#032541] text-[#1ed5a9] text-sm font-medium px-2 flex items-center justify-between"
       >
         {active === "today" ? "Today" : "This Week"}
-        <span className="ml-2 ">▼</span>
+        <span className="ml-2 "><svg className="w-[20px] h-[20px] text-[#1ed5a9] dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7"/>
+</svg>
+
+</span>
       </button>
 
       {/* Dropdown options */}
       {open && (
-        <div className="absolute w-max min-w-full bg-white  shadow-lg z-50">
+        <div className="absolute w-max min-w-full shadow-lg z-50">
           {active !== "today" && (
             <div
               onClick={() => handleSelect("today")}
@@ -137,11 +144,6 @@ const Trending = () => {
         
               <h2 className='font-bold text-sm'>{movie.original_title || movie.name}</h2>  
               <h3 className='font-lighter text-[#00000099] text-sm'>{movie.release_date || movie.first_air_date}</h3> 
-              {/* {movie.vote_average && (
-                <span className='bg-black text-white'>
-                  {Math.round(movie.vote_average * 10)}%
-                </span>
-              )} */}
             </li>
         ))}
      </ul>

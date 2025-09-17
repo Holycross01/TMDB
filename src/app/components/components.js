@@ -1,14 +1,17 @@
 import React from 'react'
-import Navbar from './Navbar'
 import Backgroundimage from './backgroundimage'
 import Trending from './Trending'
+import Trailers from './Trailers'
+import Footer from './Footer'
 
 const Components = () => {
   return (
     <div>
-        <Navbar/>
+       
         <Backgroundimage/>
         <Trending/>
+        <Trailers/>
+        <Footer/>
     </div>
   )
 }
