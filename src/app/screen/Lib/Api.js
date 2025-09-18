@@ -8,7 +8,13 @@ export const config = {
     backgroundApi: '/3/trending/all/day?language=en-US', // Specific endpoint for background data
     today: '/3/movie/now_playing',
     weekly: '/3/tv/on_the_air',
-    trailers:'/3/trending/tv/day'
+    trailers:'/3/trending/tv/day',
+    popular:'/3/tv/popular',
+    streaming:'/3/tv/top_rated',
+    OnTv:'/3/tv/airing_today',
+    forrent:'/3/tv/on_the_air',
+    intheaters:'/3/trending/tv/day'
+
   },
 };
 

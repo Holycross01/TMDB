@@ -128,7 +128,7 @@ const Trending = () => {
 
   </div>
 
-  <div className='flex mt-4 overflow-hidden overflow-x-auto '>
+  <div className='flex overflow-hidden overflow-x-auto scrollbar_hide'>
     {moviesToShow?.length > 0 ? (
      <ul className='flex flex-row gap-4'>
         {moviesToShow.map((movie)=>(
