@@ -39,3 +39,7 @@ tmdbApi.interceptors.request.use(
   },
   (error) => Promise.reject(error)
 );
+
+
+console.log("Endpoint:", process.env.NEXT_PUBLIC_ENDPOINT);
+console.log("Token exists?", !!process.env.NEXT_API_TOKEN);
