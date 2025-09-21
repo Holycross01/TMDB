@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { tmdbApi, config } from "@/app/screen/Lib/Api";
 import Image from 'next/image';
+import CustomDropdown from './customdropdwn';
 const Trailers = () => {
     const [trailerBackground, setTrailerBackground] = useState(null)
 
@@ -93,6 +94,10 @@ const FetchInTheaters = async () => {
 };
 const moviesToShow = moviesMap[active];
 
+
+const imgsize = 'w500'
+const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
+
   return (
     <div className='pt-5' style={{backgroundImage:trailerBackground  ? `linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url(https://image.tmdb.org/t/p/original${trailerBackground})` :  "none", backgroundSize:"cover",height:'auto', width:"100%",backgroundPosition:"center", backgroundRepeat: "no-repeat"}}>
 
@@ -100,7 +105,7 @@ const moviesToShow = moviesMap[active];
 
 
 
-<div className='flex space-x-5 px-3'>
+<div className='flex justify-evenly lg:justify-start lg:space-x-3 items-center px-3'>
 <h2 className="font-semibold text-[1.4em] text-white">Latest Trailers</h2>
       <div className="hidden relative min-w-[400px] h-[30px] border border-[#1ed5a9] rounded-full sm:flex items-center text-sm font-medium overflow-hidden">
         {/* Sliding indicator */}
@@ -128,6 +133,28 @@ const moviesToShow = moviesMap[active];
           </div>
         ))}
       </div>
+
+
+
+
+
+
+{/* 
+        <div className="sm:hidden w-full max-w-[200px]">
+        <select
+      value={active}
+      onChange={(e) => setActive(e.target.value)}
+      className="w-full border border-[#1ed5a9] rounded-full p-1 bg-gradient-to-r from-[#c0fecf] to-[#1ed5a9] text-black outline-none"
+    >
+      {options.map((opt) => (
+        <option key={opt} value={opt}>
+          {opt}
+        </option>
+      ))}
+      </select>
+  </div> */}
+  <CustomDropdown options={options} active={active} setActive={setActive}/>
+
 </div>
  
 
@@ -137,7 +164,7 @@ const moviesToShow = moviesMap[active];
   { moviesToShow.map((movie)=>(
         <div key={movie.id}>
             <div className='w-[320px] h-[200px] relative rounded-md overflow-hidden'>
-            <Image style={{ objectFit: 'cover'}} fill sizes='500px'  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}  alt='movie cards'/>
+            <Image style={{ objectFit: 'cover'}} fill sizes='500px'  src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'}  alt='movie cards'/>
             </div>
          
             <h2 className='text-white text-center mt-2 text-lg'>{movie.name}</h2>
