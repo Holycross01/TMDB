@@ -18,6 +18,8 @@ export const config = {
     popularontv:'/3/trending/all/day?language=en-US',
     popularforent:'/3/tv/top_rated',
     popularintheaters:'/3/trending/tv/day',
+    freetowatchmovie:'/3/discover/tv',
+    freetowatchtv:'/3/discover/movie',
   },
 };
 
