@@ -9,13 +9,11 @@ const Backgroundimage = () => {
     const FetchBackImage = async ()=>{
         try{
           const response = await tmdbApi.get(config.endpoints.backgroundApi);
-          console.log('response background', response)
             const data = response.data
             if(data.results?.length > 0){
                 const randomItem = data.results[Math.floor(Math.random()* data.results.length)]
                 setBackDrop(randomItem.backdrop_path)
             }
-            console.log('background data>>', data)
 
         }catch(error){
             console.error('error fetching background image', error)
@@ -27,8 +25,6 @@ const Backgroundimage = () => {
         FetchBackImage();
     },[])
 
-      console.log("Base URL:", process.env.NEXT_PUBLIC_ENDPOINT);
-      console.log("Token exists?", !!process.env.NEXT_API_TOKEN);
 
   return (
     <div style={{backgroundImage:backDrop ? `linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url(https://image.tmdb.org/t/p/original${backDrop})` : "none", backgroundSize:"cover",height:300, width:"100%",backgroundPosition:"center", backgroundRepeat: "no-repeat"}}>

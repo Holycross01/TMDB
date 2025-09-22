@@ -13,8 +13,11 @@ export const config = {
     streaming:'/3/tv/top_rated',
     OnTv:'/3/tv/airing_today',
     forrent:'/3/tv/on_the_air',
-    intheaters:'/3/trending/tv/day'
-
+    intheaters:'/3/trending/tv/day',
+    popularstream:'/3/trending/tv/day',
+    popularontv:'/3/trending/all/day?language=en-US',
+    popularforent:'/3/tv/top_rated',
+    popularintheaters:'/3/trending/tv/day',
   },
 };
 
@@ -41,5 +44,5 @@ tmdbApi.interceptors.request.use(
 );
 
 
-console.log("Endpoint:", process.env.NEXT_PUBLIC_ENDPOINT);
-console.log("Token exists?", !!process.env.NEXT_API_TOKEN);
+// console.log("Endpoint:", process.env.NEXT_PUBLIC_ENDPOINT);
+// console.log("Token exists?", !!process.env.NEXT_API_TOKEN);
