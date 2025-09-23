@@ -38,9 +38,9 @@ const getMovies = moviesToWatch[active]
 const imgsize = 'w500'
     const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
   return (
-    <div>
-     <div className='flex items-center px-4 space-x-2'>
-        <h2 className='font-semibold text-2xl'>Free To Watch</h2>
+    <div className='my-5 py-3 px-4'>
+     <div className='flex items-center space-x-3 px-3'>
+        <h2 className='font-semibold text-xl whitespace-nowrap'>Free To Watch</h2>
          <div className="hidden relative min-w-[150px] h-[30px] border border-[#032541] rounded-full sm:flex items-center text-sm font-medium overflow-hidden">
         {/* Sliding indicator */}
         <div
@@ -70,7 +70,7 @@ const imgsize = 'w500'
      <CustomDropdown options={options} active={active} setActive={setActive}/>
      </div>
 
-    <div className='overflow-x-auto'>
+    <div className='overflow-x-auto px-2'>
     {getMovies?.length > 0 && (
     <div className='flex space-x-5 mt-3'>
         {getMovies.map((movie)=>(

@@ -105,10 +105,10 @@ const imgsize = 'w500'
 const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
 
   return (
-    <div className='pt-5' style={{backgroundImage:trailerBackground  ? `linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url(https://image.tmdb.org/t/p/original${trailerBackground})` :  "none", backgroundSize:"cover",height:'auto', width:"100%",backgroundPosition:"center", backgroundRepeat: "no-repeat"}}>
+    <div className='pt-5 px-4' style={{backgroundImage:trailerBackground  ? `linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url(https://image.tmdb.org/t/p/original${trailerBackground})` :  "none", backgroundSize:"cover",height:'auto', width:"100%",backgroundPosition:"center", backgroundRepeat: "no-repeat"}}>
 
-<div className='flex justify-evenly lg:justify-start lg:space-x-3 items-center px-3'>
-<h2 className="font-semibold text-[1.4em] text-white">Latest Trailers</h2>
+<div className='flex justify-start space-x-2 lg:space-x-3 items-center px-3'>
+<h2 className="font-semibold whitespace-nowrap text-xl text-white">Latest Trailers</h2>
       <div className="hidden relative min-w-[500px] h-[30px] border border-[#1ed5a9] rounded-full sm:flex items-center text-sm font-medium overflow-hidden">
         {/* Sliding indicator */}
         <div

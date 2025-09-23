@@ -63,9 +63,9 @@ const Popular = () => {
     const imgsize = 'w500'
     const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
   return (
-    <div className='my-5 py-3'>
-      <div className='flex space-x-3 items-center px-4'>
-        <h2 className='font-semibold text-2xl'>what's popular</h2>
+    <div className='my-5 py-3 px-4'>
+      <div className='flex space-x-3 items-center px-3'>
+        <h2 className='font-semibold whitespace-nowrap text-xl'>what's popular</h2>
          <div className="hidden relative min-w-[400px] h-[30px] border border-[#032541] rounded-full sm:flex items-center text-sm font-medium overflow-hidden">
         {/* Sliding indicator */}
         <div
@@ -97,7 +97,7 @@ const Popular = () => {
       </div>
 
 
-    <div className='overflow-x-auto'>
+    <div className='overflow-x-auto px-2'>
        {moviesToDisplay?.length > 0 &&(
         <div className='flex space-x-5 mt-3'>
             {moviesToDisplay.map((movie)=>(
