@@ -1,9 +1,10 @@
-import Components from "./components/components";
+import UIBlock from "./components/UIBlock";
+// import Components from "./components/UIBlock";
 
 export default function Home() {
   return (
   <div>
-    <Components/>
+    <UIBlock/>
  </div>
   );
 }

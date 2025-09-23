@@ -7,7 +7,7 @@ import Popular from './popular'
 import Freewatch from './Freewatch'
 
 
-const Components = () => {
+const UIBlock = () => {
   return (
     <div>
         <Backgroundimage/>
@@ -20,4 +20,4 @@ const Components = () => {
   )
 }
 
-export default Components
+export default UIBlock
