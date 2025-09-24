@@ -134,7 +134,7 @@ const Trending = () => {
         {moviesToShow.map((movie)=>(
             <li key={movie.id} >
               <div className='w-[150px] h-[225px] relative rounded-md overflow-hidden'>
-                <Image style={{ objectFit: 'cover'}} fill sizes='500px' src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}`: '/fallback-image.jpg'} alt='movie-title'/>
+                <Image style={{ objectFit: 'cover'}} fill sizes='500px' src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}`: '/fallback-image.jpg'} className='cursor-pointer' alt='movie-title'/>
                    {movie.vote_average && (
                 <span className={`w-8 h-8 text-xs bg-black absolute bottom-2 left-2 text-white flex items-center justify-center border-2 font-bold  rounded-full ${Math.round(movie.vote_average * 10) >= 70 ? "border-green-800 bg-black/70" : "border-yellow-500 bg-black/70"}`}>
                   {Math.round(movie.vote_average * 10)}%
@@ -142,7 +142,7 @@ const Trending = () => {
               )}
               </div>
         
-              <h2 className='font-bold text-sm'>{movie.original_title || movie.name}</h2>  
+              <h2 className='font-bold text-sm hover:text-[#01b4e4] cursor-pointer'>{movie.original_title || movie.name}</h2>  
               <h3 className='font-lighter text-[#00000099] text-sm'>{movie.release_date || movie.first_air_date}</h3> 
             </li>
         ))}

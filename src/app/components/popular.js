@@ -103,14 +103,14 @@ const Popular = () => {
             {moviesToDisplay.map((movie)=>(
                 <div key={movie.id}>
                  <div className='w-[150px] h-[225px] relative rounded-md '>
-                    <Image style={{ objectFit: 'cover'}} fill sizes='500px' src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'} alt='movie cards' className='rounded-md'/>
+                    <Image style={{ objectFit: 'cover'}} fill sizes='500px' src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'} alt='movie cards' className='rounded-md cursor-pointer'/>
                   {movie.vote_average && (
                 <span className={`w-8 h-8 text-xs bg-black absolute bottom-2 left-2 text-white flex items-center justify-center border-2 font-bold  rounded-full ${Math.round(movie.vote_average * 10) >= 70 ? "border-green-800 bg-black/70" : "border-yellow-500 bg-black/70"}`}>
                   {Math.round(movie.vote_average * 10)}%
                 </span>
               )}
                  </div>
-                   <h2 className='text-black text-center font-bold mt-2 text-md'>{movie.name}</h2>
+                   <h2 className='text-black text-center font-bold mt-2 text-md hover:text-[#01b4e4] cursor-pointer'>{movie.name}</h2>
                      <p className='text-black/50 text-center text-sm'>{movie.first_air_date}</p>
                 </div>
             ))}

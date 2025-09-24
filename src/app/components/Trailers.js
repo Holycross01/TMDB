@@ -147,7 +147,7 @@ const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
   { moviesToShow.map((movie)=>(
         <div key={movie.id}>
             <div className='relative w-[320px] h-[200px] rounded-md cursor-pointer'>
-            <Image style={{ objectFit: 'cover'}} fill sizes='500px'  src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'}  alt='movie cards' className='rounded-md'/>
+            <Image style={{ objectFit: 'cover'}} fill sizes='500px'  src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'}  alt='movie cards' className='rounded-md cursor-pointer'/>
             <div className='absolute inset-0 flex items-center justify-center'>
              {Icons.map((icon)=>(
               <div key={icon.id}>
@@ -158,7 +158,7 @@ const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
           
             </div>
          
-            <h2 className='text-white text-center mt-2 text-lg'>{movie.name}</h2>
+            <h2 className='text-white text-center mt-2 text-lg cursor-pointer'>{movie.name}</h2>
             <p className='text-white text-center '>{movie.first_air_date}</p>
 
         </div>
