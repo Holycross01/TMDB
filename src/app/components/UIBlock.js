@@ -6,6 +6,7 @@ import Footer from './Footer'
 import Popular from './popular'
 import Freewatch from './Freewatch'
 import Leaderboard from './Leaderboard'
+import Jointoday from './Jointoday'
 
 
 const UIBlock = () => {
@@ -16,6 +17,7 @@ const UIBlock = () => {
         <Trailers/>
         <Popular/>
         <Freewatch/>
+        <Jointoday/>
         <Leaderboard/>
         <Footer/>
     </div>
