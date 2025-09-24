@@ -146,8 +146,8 @@ const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
    <div className='flex space-x-5'>
   { moviesToShow.map((movie)=>(
         <div key={movie.id}>
-            <div className='relative w-[320px] h-[200px] rounded-md cursor-pointer'>
-            <Image style={{ objectFit: 'cover'}} fill sizes='500px'  src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'}  alt='movie cards' className='rounded-md cursor-pointer'/>
+            <div className='relative w-[320px] h-[200px] rounded-md cursor-pointer overflow-hidden transition-transform duration-300 hover:scale-95'>
+            <Image style={{ objectFit: 'cover'}} fill sizes='500px'  src={movie.backdrop_path ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '/images/fallback-image.jpg'}  alt='movie cards' className='rounded-md  cursor-pointer'/>
             <div className='absolute inset-0 flex items-center justify-center'>
              {Icons.map((icon)=>(
               <div key={icon.id}>
