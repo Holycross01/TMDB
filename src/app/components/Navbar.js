@@ -13,6 +13,7 @@ const Navbar = () => {
   return (
     
         <nav className='bg-[#032541] px-5 md:px-[40px] py-[10px] '>
+              <div className='max-w-7xl mx-auto'>
             <div className=' flex justify-between items-center '>
                 <div className='flex text-white items-center text-xl space-x-5'>
                     <Link href=""><Image src="/images/tmdblogo.svg" alt='tmdb-logo' className='hidden lg:block' width={154} height={20}/></Link>
@@ -109,7 +110,7 @@ const Navbar = () => {
             </div>
             </div>
            
-       
+       </div>
         </nav>
   )
 }

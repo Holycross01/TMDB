@@ -29,6 +29,7 @@ const Backgroundimage = () => {
   return (
     <div style={{backgroundImage:backDrop ? `linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url(https://image.tmdb.org/t/p/original${backDrop})` : "none", backgroundSize:"cover",height:300, width:"100%",backgroundPosition:"center", backgroundRepeat: "no-repeat"}}>
     <div className='py-[30px] px-[40px]'>
+        <div className='max-w-7xl mx-auto'>
        <h1 className='text-white text-5xl font-bold'>Welcome.</h1>
        <h3 className='text-white text-2xl md:text-3xl font-semibold'>Millions of movies, Tv shows and people to discover. Explore now</h3>
       <div className='relative md:mt-12 mt-5'>
@@ -39,7 +40,7 @@ const Backgroundimage = () => {
      
        
     </div>
-
+    </div>
     </div>
   )
 }

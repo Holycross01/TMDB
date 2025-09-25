@@ -54,7 +54,7 @@ const Trending = () => {
 
   return (
     <div className='my-[40px] mx-[20px]'>
-
+    <div className='max-w-7xl mx-auto'>
   <div className='flex items-center  space-x-2 justify-start'>
     <h2 className='font-semibold text-[1.4em]'>Trending</h2>
   <div className="  hidden relative min-w-[200px] h-[30px] border border-gray-800 rounded-full sm:flex items-center justify-between text-sm text-white font-medium px-1">
@@ -151,6 +151,7 @@ const Trending = () => {
 
   </div>
 
+     </div>
      </div>
   )
    

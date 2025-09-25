@@ -39,6 +39,7 @@ const imgsize = 'w500'
     const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
   return (
     <div className='my-5 py-3 px-4'>
+       <div className='max-w-7xl mx-auto'>
      <div className='flex items-center space-x-3 px-3'>
         <h2 className='font-semibold text-xl whitespace-nowrap'>Free To Watch</h2>
          <div className="hidden relative min-w-[150px] h-[30px] border border-[#032541] rounded-full sm:flex items-center text-sm font-medium overflow-hidden">
@@ -92,6 +93,7 @@ const imgsize = 'w500'
     </div>
 
 
+    </div>
     </div>
   )
 }

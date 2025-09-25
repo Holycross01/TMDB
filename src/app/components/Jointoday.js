@@ -3,6 +3,7 @@ import React from 'react'
 const Jointoday = () => {
   return (
    <div className='relative p-7 my-7 h-auto w-full bg-cover bg-center' style={{backgroundImage:"url('/images/bckimage.webp')"}}>
+    <div className='max-w-7xl mx-auto'>
     <div className="absolute inset-0 bg-black/30"></div>
 
       <h3 className=' relative z-10 text-3xl uppercase my-4 text-white'>Join today</h3>
@@ -18,6 +19,7 @@ const Jointoday = () => {
 
 
 
+   </div>
    </div>
   )
 }

@@ -64,6 +64,7 @@ const Popular = () => {
     const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
   return (
     <div className='my-5 py-3 px-4'>
+        <div className='max-w-7xl mx-auto'>
       <div className='flex space-x-3 items-center px-3'>
         <h2 className='font-semibold whitespace-nowrap text-xl'>what's popular</h2>
          <div className="hidden relative min-w-[400px] h-[30px] border border-[#032541] rounded-full sm:flex items-center text-sm font-medium overflow-hidden">
@@ -118,6 +119,7 @@ const Popular = () => {
        )}
     </div>
 
+    </div>
     </div>
   )
 }

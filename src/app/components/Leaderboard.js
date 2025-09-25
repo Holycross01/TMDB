@@ -5,6 +5,7 @@ import Link from 'next/link'
 const Leaderboard = () => {
   return (
     <div className='py-[30px] px-[40px]'>
+        <div className='max-w-7xl mx-auto'>
         <div className='flex space-x-3 items-center'>
             <h3 className='text-2xl font-semibold'>Leaderboard</h3>
             <div>
@@ -271,6 +272,7 @@ const Leaderboard = () => {
 
     </div>
 
+    </div>
     </div>
   )
 }
