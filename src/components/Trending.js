@@ -1,7 +1,7 @@
  'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
-import { tmdbApi, config } from '@/app/screen/Lib/Api';
+import { tmdbApi, config } from '@/screen/Lib/Api';
 
 
 

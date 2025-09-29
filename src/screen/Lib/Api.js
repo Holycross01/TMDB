@@ -20,6 +20,7 @@ export const config = {
     popularintheaters:'/3/trending/tv/day',
     freetowatchmovie:'/3/discover/tv',
     freetowatchtv:'/3/discover/movie',
+    popularpageformovies: '/3/movie/popular',
   },
 };
 

@@ -1,8 +1,8 @@
 "use client"
 import React, {useState, useEffect } from 'react'
-import { tmdbApi, config } from '@/app/screen/Lib/Api';
 import CustomDropdown from './customdropdwn';
 import Image from 'next/image';
+import { config, tmdbApi } from '@/screen/Lib/Api';
 const Freewatch = () => {
 
       const options = [ "movies", "tv"];

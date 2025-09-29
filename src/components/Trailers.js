@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { tmdbApi, config } from "@/app/screen/Lib/Api";
+import { tmdbApi, config } from "@/screen/Lib/Api";
 import Image from 'next/image';
 import CustomDropdown from './customdropdwn';
 const Trailers = () => {
@@ -117,8 +117,7 @@ const IMAGE_BASE_URL = `https://image.tmdb.org/t/p/${imgsize}`
           style={{
             width: `${100 / options.length}%`, // 👈 auto adjust width
             transform: `translateX(${options.indexOf(active) * 100}%)`, // slide to active
-          }}
-        ></div>
+       }} ></div>
 
         {/* Options */}
         {options.map((opt) => (

@@ -16,7 +16,7 @@ const Navbar = () => {
               <div className='max-w-7xl mx-auto'>
             <div className=' flex justify-between items-center '>
                 <div className='flex text-white items-center text-xl space-x-5'>
-                    <Link href=""><Image src="/images/tmdblogo.svg" alt='tmdb-logo' className='hidden lg:block' width={154} height={20}/></Link>
+                    <Link href="/"><Image src="/images/tmdblogo.svg" alt='tmdb-logo' className='hidden lg:block' width={154} height={20}/></Link>
 
                 <button className='block lg:hidden' onClick={clickMobileNav}>
                     ☰
@@ -27,7 +27,7 @@ const Navbar = () => {
                          <Link href="/" className='p-[8px] text-[15px]'>Movies</Link>
                          <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
-                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
+                                <li><Link href="/movies" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
                                  <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Now Playing</Link></li>
                                  <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Upcoming</Link></li>
                                  <li><Link href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Top rated</Link></li>
