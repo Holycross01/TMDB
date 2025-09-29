@@ -31,7 +31,7 @@ const Leaderboard = () => {
      <div className='flex items-center space-x-3 my-3'>
 
            <div className='shrink-0'>
-                <Link href='/'><Image src="/images/img1.jpeg" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img1.jpeg" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
 
           <div>
@@ -56,7 +56,7 @@ const Leaderboard = () => {
       <div className='flex items-center space-x-3 my-3'>
 
            <div>
-                <Link href='/'><Image src="/images/img3.webp" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img3.webp" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
           <div>
               <Link href='/' className='font-semibold hover:text-[#1ed5a9]'>Roman</Link> 
@@ -80,7 +80,7 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
            <div>
-                <Link href='/'><Image src="/images/img5.webp" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img5.webp" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
           <div>
               <Link href='/' className='font-semibold hover:text-[#1ed5a9]'>chkchkboom</Link> 
@@ -103,7 +103,7 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
            <div>
-               <div className='w-[60px] h-[60px] flex justify-center items-center bg-[#1ed5a9] text-white rounded-full'>M
+               <div className='w-[50px] h-[50px] flex justify-center items-center bg-[#1ed5a9] text-white rounded-full'>M
                </div>
           </div>
           <div>
@@ -126,7 +126,7 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
            <div>
-                <Link href='/'><Image src="/images/img7.webp" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img7.webp" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
           <div>
               <Link href='/' className='font-semibold hover:text-[#1ed5a9]'>capricorn✨</Link> 
@@ -153,7 +153,7 @@ const Leaderboard = () => {
 
                  <div className='flex items-center space-x-3 my-3'>
            <div className='shrink-0 '>
-                <Link href='/'><Image src="/images/img2.webp" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img2.webp" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
           <div>
               <Link href='/' className='font-semibold hover:text-[#1ed5a9]'>Shei</Link> 
@@ -177,12 +177,12 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
            <div className='shrink-0'>
-                <Link href='/'><Image src="/images/img4.webp" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img4.webp" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
           <div>
               <Link href='/' className='font-semibold hover:text-[#1ed5a9]'>talestalker</Link> 
                 <div className='flex items-center space-x-3'>
-                 <div className='md:w-[300px] w-[140px] h-2 bg-gradient-to-r from-[#c0fecf] to-[#01d277] rounded-full'></div>
+                 <div className='md:w-[350px] w-[100px] h-2 bg-gradient-to-r from-[#c0fecf] to-[#01d277] rounded-full'></div>
                 <span className='text-sm font-semibold -m-2'>1,377,078</span>
                 </div>
 
@@ -201,7 +201,7 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
            <div>
-               <div className='w-[60px] h-[60px] flex justify-center items-center bg-[#0177d2] text-white rounded-full'>B
+               <div className='w-[50px] h-[50px] flex justify-center items-center bg-[#0177d2] text-white rounded-full'>B
                </div>
           </div>
           <div>
@@ -226,7 +226,7 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
            <div>
-                <Link href='/'><Image src="/images/img6.webp" alt="img Logo" width={60} height={60} className='rounded-full' priority /></Link> 
+                <Link href='/'><Image src="/images/img6.webp" alt="img Logo" width={50} height={50} className='rounded-full' priority /></Link> 
           </div>
           <div>
               <Link href='/' className='font-semibold hover:text-[#1ed5a9]'>HeelerCattle86</Link> 
@@ -250,7 +250,7 @@ const Leaderboard = () => {
 
       <div className='flex items-center space-x-3 my-3'>
          <div>
-           <div className='w-[60px] h-[60px] flex justify-center items-center bg-[#01b4e4] text-white rounded-full'>K
+           <div className='w-[50px] h-[50px] flex justify-center items-center bg-[#01b4e4] text-white rounded-full'>K
                </div>
           </div>
           <div>
