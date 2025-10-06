@@ -21,6 +21,11 @@ export const config = {
     freetowatchmovie:'/3/discover/tv',
     freetowatchtv:'/3/discover/movie',
     popularpageformovies: '/3/movie/popular',
+    popularpagefortvshows:'/3/discover/tv',
+    popularpageforpeople:'/3/person/popular',
+    movieDetails: '/3/movie',
+    moviecast:'/3/movie/',
+    movierecommendations: '/3/movie/',
   },
 };
 

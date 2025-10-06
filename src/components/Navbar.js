@@ -25,7 +25,7 @@ const Navbar = () => {
                     <div className='space-x-4 py-[8px] font-semibold hidden lg:flex'>
                         <div className='relative group font-extralight'>
                          <Link href="/" className='p-[8px] text-[15px]'>Movies</Link>
-                         <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
+                         <div className='z-10 absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
                                 <li><Link href="/movies" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
                                  <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Now Playing</Link></li>
@@ -37,9 +37,9 @@ const Navbar = () => {
 
                         <div className='relative group font-extralight'>
                           <Link href="/" className='p-[8px] text-[15px]'>Tv shows</Link>
-                              <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
+                              <div className='z-10 absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
-                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
+                                <li><Link href="/Tvshows" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular</Link></li>
                                  <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Airing Today</Link></li>
                                  <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">on Tv</Link></li>
                                  <li><Link href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Top rated</Link></li>
@@ -49,9 +49,9 @@ const Navbar = () => {
 
                         <div className='relative group font-extralight'>
                         <Link href="/" className='p-[8px] text-[15px]'>People</Link>
-                          <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
+                          <div className='z-10 absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
-                                <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular People</Link></li>
+                                <li><Link href="/people" className="block px-4 py-2  text-sm hover:bg-gray-100">Popular People</Link></li>
                              
                             </ul>
                          </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                     
                     <div className='relative group font-extralight'>
                    <Link href="/" className='p-[8px] text-[15px]'>More</Link>
-                     <div className='absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
+                     <div className='z-10 absolute -mt-0.3 w-38 bg-white text-black rounded shadow-md invisible group-hover:opacity-100 group-hover:visible  py-1'>
                             <ul>
                                 <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Discussion</Link></li>
                                  <li><Link href="#" className="block px-4 py-2  text-sm hover:bg-gray-100">Leaderboard</Link></li>
@@ -78,7 +78,7 @@ const Navbar = () => {
 
                  {/* Mobile-nav-logo */}
                   <div className='flex justify-center items-center pl-10'>
-                 <Image src="/images/mobile-logo.svg" alt='tdmb logo' className='block lg:hidden' width={59} height={39} />
+               <Link href="/"><Image src="/images/mobile-logo.svg" alt='tdmb logo' className='block lg:hidden' width={59} height={39} /></Link>
                 </div>
 
                    {/* Nav icons */}
@@ -95,9 +95,9 @@ const Navbar = () => {
 
             {/* mobile-nav-link */}
             <div className={`space-y-1 flex flex-col text-white transition-all duration-300 ease-in-out overflow-hidden
-            ${mobileNav ?  'opacity-300 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
-     <div className='space-y-2 flex flex-col text-white '>
-                <Link href="" className='font-bold text-[1.2em]'>Movies</Link>
+            ${mobileNav ? 'opacity-300 max-h-[1000px]' : 'opacity-0 max-h-0'}`}>
+           <div className='space-y-2 flex flex-col text-white'>
+                <Link href="/movies" className='font-bold text-[1.2em]' onClick={()=> setMobileNav(false)}>Movies</Link>
                 <Link href="" className='font-bold text-[1.2em]'>Tv shows</Link>
                 <Link href="" className='font-bold text-[1.2em] mb-4'>People</Link>
                 <Link href="" className='text-white/50'>Contribution Bible</Link>
