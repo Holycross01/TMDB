@@ -24,7 +24,10 @@ export const config = {
     popularpagefortvshows:'/3/discover/tv',
     popularpageforpeople:'/3/person/popular',
     movieDetails: '/3/movie',
+    TvshowDetails: '/3/tv',
     moviecast:'/3/movie/',
+    Tvshowcast:'/3/tv/',
+    Tvshowrecommendation:'/3/tv/',
     movierecommendations: '/3/movie/',
   },
 };

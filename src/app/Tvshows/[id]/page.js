@@ -38,11 +38,11 @@ const MovieDetails = () => {
 
 
 
-  const fetchMovieDetails = async () => {
+  const TvshowDetails = async () => {
     try {
       // You need the movie ID to fetch specific movie details
-      const { data } = await tmdbApi.get(`${config.endpoints.movieDetails}/${id}?append_to_response=images`);
-      console.log("Data for fetchmoviedetails: ", data);
+      const { data } = await tmdbApi.get(`${config.endpoints.TvshowDetails}/${id}?append_to_response=images`);
+      console.log("Data for TvshowDetails: ", data);
       setDetails(data);
       console.log("details", details);
 
@@ -52,9 +52,9 @@ const MovieDetails = () => {
   };
 
 
-  const Fetchmoviecast = async ()=>{
+  const Tvshowcast = async ()=>{
    try{
-      const {data} = await tmdbApi.get(`${config.endpoints.moviecast}/${id}/credits`)
+      const {data} = await tmdbApi.get(`${config.endpoints.Tvshowcast}/${id}/credits`)
        console.log('fetchmoviecast', data.cast)
        setMoviecast(data.cast);
 
@@ -66,7 +66,7 @@ const MovieDetails = () => {
 
   const Fetchrecommendation = async ()=>{
    try{
-      const {data} = await tmdbApi.get(`${config.endpoints.moviecast}/${id}/recommendations`)
+      const {data} = await tmdbApi.get(`${config.endpoints.Tvshowrecommendation}/${id}/recommendations`)
        console.log('fetch recommendations', data.results)
        setRecommendation(data.results);
 
@@ -81,8 +81,8 @@ const MovieDetails = () => {
 
 
   useEffect(() => {
-      fetchMovieDetails();
-      Fetchmoviecast();
+      TvshowDetails();
+      Tvshowcast();
       Fetchrecommendation();
      
   }, []);
@@ -103,13 +103,13 @@ const MovieDetails = () => {
     <div>
       <div
         style={{ backgroundImage: `url(${backgroundimgpath})` }}
-        className=" max-h-screen bg-cover bg-center relative w-full md:min-h-[500px] px-[70px] py-[50px]"
+        className=" max-h-screen bg-cover bg-center relative w-full md:min-h-[500px] px-[20px] md:px-[70px] py-[50px]"
       >
         <div className="max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-black/30"></div>
 
           <div className="flex flex-col lg:flex-row gap-7">
-            <div className="relative w-auto  md:w-[300px] h-[300px] md:h-[400px] ">
+            <div className="relative w-[200px]  md:w-[300px] h-[350px] md:h-[420px] ">
               <Image
                 style={{ objectFit: "cover" }}
                 src={posterimgpath}
@@ -121,22 +121,22 @@ const MovieDetails = () => {
 
             <div className="flex-1 relative">
              <p className="text-white text-4xl my-3 font-bold">
-                 {details.title} ({details.release_date?.slice(0, 4)})
+                 {details.name} ({details.first_air_date?.slice(0, 4)})
             </p>
 
 
               <div className="flex items-center gap-1 mb-3">
                <span className=" border border-white text-white p-1">TV-MA</span>
-                  <span className="flex gap-1">
+                  <div className="flex gap-1">
                    { details.genres?.map((genre, index)=>(
-                 <span key={genre.id}>
+                 <div key={genre.id}>
                     <span className=" text-white">{genre.name}</span>
                  <span className="text-white">{index < details.genres.length -1 && ' ,'}</span>
                
-                </span>
-                
+                </div>  
               ))}
-              </span>
+              </div>
+
                 {details.runtime && (
                      <span className="text-white">{minToHours(details?.runtime)}</span>  
                  )}
@@ -154,7 +154,7 @@ const MovieDetails = () => {
                   >
                     {Math.round(details.vote_average * 10)}% 
                   </div>
-                  <div className="-ml-5">
+                  <div className="">
                     <b className="text-white">user<br/>Score</b>
                   </div>
 
@@ -228,13 +228,13 @@ const MovieDetails = () => {
       {/* FETCHING MOVIESCAST IMAGES AND DETAILS */}
 
     <div className="px-10 py-5 ">
-         <h3 className="font-bold py-3">Top Billed cast</h3>
+         <h3 className="font-bold py-3">series cast</h3>
 
     <div className="flex space-x-5 overflow-x-auto rounded-md">
             {moviecast?.map((movie)=>(
-                <div key={movie.id} className="pb-10">
-                    <div className="relative w-[130px] h-[150px] ">
-                      <Image style={{objectFit: 'cover'}} src={ movie.profile_path ? `${baseurl}${movie.profile_path}` : '/images/fallback-image.jpg'} fill sizes="500px" alt="movie cast" className="rounded-t-md"/>
+                <div key={movie.id} className="pb-10 w-[150px]">
+                    <div className="relative  h-[220px] ">
+                      <Image style={{objectFit: 'contain'}} src={ movie.profile_path ? `${baseurl}${movie.profile_path}` : '/images/fallback-image.jpg'} fill sizes="500px" alt="movie cast" className="rounded-t-md"/>
                     </div>
 
                     <div className="bg-white/80 text-center items-center h-[90px] shadow-lg rounded-b-md px-2">
@@ -242,8 +242,6 @@ const MovieDetails = () => {
                     <p className="text-sm">{movie.character}</p>
                     </div>
                     
-                   
-
                 </div>
             ))}
         </div>
@@ -351,13 +349,24 @@ const MovieDetails = () => {
         <div className="flex space-x-3 overflow-x-auto" >
           {recommendation?.map((movie)=>(
             <div key={movie.id}>
-               <div className="relative w-[250px] h-[150px]">
-                <Image style={{objectFit: 'cover'}} src={movie.backdrop_path ? `${baseurl}${movie.backdrop_path}` : '/images/fallback-image.jpg'} fill sizes="500px" alt="image" className="rounded-sm"/>
+             <div className="relative group w-[250px]">
+               <div className="relative w-full h-[150px]">
+                 <Image style={{objectFit: 'cover'}} src={movie.backdrop_path ? `${baseurl}${movie.backdrop_path}` : '/images/fallback-image.jpg'} fill sizes="500px" alt="image" className="rounded-sm transition duration-300 group-hover:opacity-80"/>
+                 <div className="absolute bottom-0 left-0 right-0 h-1/2 group">
+                    <div className="absolute bottom-0 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition duration-300 mt-2">
+                  <p className="text-sm text-gray-200">
+                  {movie.first_air_date}
+                  </p>
                </div>
+                 </div>   
+            </div>
+          
+            </div>
+              
 
                <div className="flex justify-between">
                 <div>
-                  <p>{movie.title}</p>
+                  <p>{movie.name}</p>
                 </div>
 
                 <div>
