@@ -55,7 +55,7 @@ const MovieDetails = () => {
   const Tvshowcast = async ()=>{
    try{
       const {data} = await tmdbApi.get(`${config.endpoints.Tvshowcast}/${id}/credits`)
-       console.log('fetchmoviecast', data.cast)
+       console.log('fetchmoviecast', data)
        setMoviecast(data.cast);
 
    }catch(error){
@@ -67,7 +67,7 @@ const MovieDetails = () => {
   const Fetchrecommendation = async ()=>{
    try{
       const {data} = await tmdbApi.get(`${config.endpoints.Tvshowrecommendation}/${id}/recommendations`)
-       console.log('fetch recommendations', data.results)
+       console.log('fetch recommendations', data)
        setRecommendation(data.results);
 
    }catch(error){
@@ -103,15 +103,15 @@ const MovieDetails = () => {
     <div>
       <div
         style={{ backgroundImage: `url(${backgroundimgpath})` }}
-        className=" max-h-screen bg-cover bg-center relative w-full md:min-h-[500px] px-[20px] md:px-[70px] py-[50px]"
+        className=" max-h-screen bg-cover bg-center relative w-full h-[300px] md:h-[500px] lg:px-[70px] py-[40px]"
       >
         <div className="max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-black/30"></div>
 
           <div className="flex flex-col lg:flex-row gap-7">
-            <div className="relative w-[200px]  md:w-[300px] h-[350px] md:h-[420px] ">
+            <div className="relative w-[200px] self-start md:w-[300px] h-[220px] md:h-[420px] ">
               <Image
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 src={posterimgpath}
                 alt="movie detail card"
                 className="rounded-md"
@@ -119,26 +119,26 @@ const MovieDetails = () => {
               />
             </div>
 
-            <div className="flex-1 relative">
-             <p className="text-white text-4xl my-3 font-bold">
+            <div className="flex-1 pb-5 lg:pb-0 relative bg-[#e0e0e0] lg:bg-transparent p-[10px] lg:p-0">
+             <p className="text-black text-center lg:text-start lg:text-white md:text-4xl text-xl my-3 font-bold">
                  {details.name} ({details.first_air_date?.slice(0, 4)})
             </p>
 
 
-              <div className="flex items-center gap-1 mb-3">
-               <span className=" border border-white text-white p-1">TV-MA</span>
+              <div className="flex flex-col lg:flex-row items-center gap-1 mb-3 bg-[#0000001A] border-[#000000] lg:bg-transparent ">
+               <span className=" border border-white text-black lg:text-white p-1">TV-MA</span>
                   <div className="flex gap-1">
                    { details.genres?.map((genre, index)=>(
                  <div key={genre.id}>
-                    <span className=" text-white">{genre.name}</span>
-                 <span className="text-white">{index < details.genres.length -1 && ' ,'}</span>
+                    <span className=" text-black lg:text-white">{genre.name}</span>
+                 <span className="text-black lg:text-white">{index < details.genres.length -1 && ' ,'}</span>
                
                 </div>  
               ))}
               </div>
 
                 {details.runtime && (
-                     <span className="text-white">{minToHours(details?.runtime)}</span>  
+                     <span className="text-black lg:text-white">{minToHours(details?.runtime)}</span>  
                  )}
           
               </div>
@@ -146,7 +146,7 @@ const MovieDetails = () => {
 
              <div className="flex gap-5 items-center mb-3">
                   <div
-                    className={`w-16 h-16 text-lg bg-black text-white lg:flex items-center justify-center border-2 font-bold rounded-full hidden ${
+                    className={`w-16 h-16 text-lg bg-black text-white flex items-center justify-center border-2 font-bold rounded-full ${
                       Math.round(details.vote_average * 10) >= 70
                         ? "border-green-800 bg-black/70"
                         : "border-yellow-500 bg-black/70"
@@ -154,8 +154,8 @@ const MovieDetails = () => {
                   >
                     {Math.round(details.vote_average * 10)}% 
                   </div>
-                  <div className="">
-                    <b className="text-white">user<br/>Score</b>
+                  <div className="text-black lg:text-white">
+                    <b className="">user<br/>Score</b>
                   </div>
 
                     <div className="text-2xl">
@@ -166,9 +166,9 @@ const MovieDetails = () => {
                         ))}
                     </div>
 
-                   <div className="bg-[#032541] text-white text-sm flex items-center justify-center px-4 py-2 rounded-full gap-1">
+                   <div className="lg:bg-[#032541] bg-transparent text-black lg:text-white text-sm flex items-center justify-center px-2 lg:px-4 py-2 lg:py-2 rounded-full gap-1">
                        <p className="font-bold">whats your vibe?</p>
-                       <svg className="w-5 h-5 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                       <svg className="w-5 h-5 text-black lg:text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                         </svg>
                    </div>
@@ -178,7 +178,7 @@ const MovieDetails = () => {
 
 
 
-             <div className="flex items-center gap-5 mb-3">
+             <div className=" z-10 flex items-center gap-5 lg:mb-3 mb-0 fixed lg:static bottom-0 left-0 w-screen lg:w-max bg-[#032541cc] lg:bg-transparent justify-around lg:justify-start">
 
                 <span className="bg-[#032541] rounded-full p-3">
                 <svg className="w-4 h-4 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"      fill="none" viewBox="0 0 24 24">
@@ -207,13 +207,16 @@ const MovieDetails = () => {
             
              </div>
 
+
+
+
              <div className="mb-3">
-                <i className="text-lg text-white">{details.tagline}</i>
+                <i className="text-lg text-black lg:text-white">{details.tagline}</i>
              </div>
 
              <div className="mb-3">
-                <p className="font-bold text-xl text-white ">overview</p>
-                <p className="text-sm text-white ">{details.overview}</p>
+                <p className="font-bold text-xl text-black lg:text-white ">overview</p>
+                <p className="text-sm text-black lg:text-white ">{details.overview}</p>
              </div>
                  
                  
@@ -227,13 +230,13 @@ const MovieDetails = () => {
 
       {/* FETCHING MOVIESCAST IMAGES AND DETAILS */}
 
-    <div className="px-10 py-5 ">
+    <div className="px-10 py-5 mt-[400px] lg:mt-0">
          <h3 className="font-bold py-3">series cast</h3>
 
     <div className="flex space-x-5 overflow-x-auto rounded-md">
             {moviecast?.map((movie)=>(
                 <div key={movie.id} className="pb-10 w-[150px]">
-                    <div className="relative  h-[220px] ">
+                    <div className="relative w-[150px]  h-[220px] ">
                       <Image style={{objectFit: 'contain'}} src={ movie.profile_path ? `${baseurl}${movie.profile_path}` : '/images/fallback-image.jpg'} fill sizes="500px" alt="movie cast" className="rounded-t-md"/>
                     </div>
 
