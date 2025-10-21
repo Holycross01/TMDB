@@ -94,7 +94,7 @@ const MovieDetails = () => {
     fetchMovieDetails();
     Fetchmoviecast();
     Fetchrecommendation();
-  }, []);
+  }, [id]);
 
   // Guard clause for when movieDetails is null
   if (!details) {

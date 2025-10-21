@@ -25,6 +25,7 @@ export const config = {
     popularpageforpeople:'/3/person/popular',
     movieDetails: '/3/movie',
     TvshowDetails: '/3/tv',
+    peopleDetails: '/3/person',
     moviecast:'/3/movie/',
     Tvshowcast:'/3/tv/',
     Tvshowrecommendation:'/3/tv/',

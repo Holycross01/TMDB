@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { tmdbApi, config } from '@/screen/Lib/Api'
+import Link from 'next/link'
 
 const Popularspeoplepage = () => {
     const [people, setPeople] = useState([])
@@ -31,7 +32,8 @@ const Popularspeoplepage = () => {
           <div className='grid grid-cols md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7'>
             {people && people.length > 0 ? (
               people.slice(0,20).map((movie)=>(
-                <div key={movie.id} className='w-full lg:min-w-[190px]'>
+                <Link  href={`/people/${movie.id}`} key={movie.id}>
+                <div className='w-full lg:min-w-[190px]'>
                     <div className='relative h-[273px] w-full lg:h-[273px]'>
                         <Image style={{objectFit:'cover'}} src={movie.profile_path ? `${IMAGE_BASE_URL}${movie.profile_path}`: "/images/fallback-image.jpg"} fill sizes='500px' alt='movie cards' className='rounded-t-md cursor-pointer'/>
                     </div>
@@ -41,38 +43,11 @@ const Popularspeoplepage = () => {
                     </div>
 
                 </div>
+                </Link>
               ))
             ) : (<p>loading..</p>)}
           </div>
-          {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-7">
-  {people && people.length > 0 ? (
-    people.slice(0,20).map((movie) => (
-      <div key={movie.id} className="w-full">
-        <div className="relative h-[200px] lg:h-[273px]">
-          <Image 
-            style={{ objectFit: 'cover' }} 
-            src={movie.profile_path 
-              ? `${IMAGE_BASE_URL}${movie.profile_path}` 
-              : "/images/fallback-image.jpg"} 
-            fill 
-            sizes="500px" 
-            alt="movie cards" 
-            className="rounded-t-md cursor-pointer"
-          />
-        </div>
-        <div className="bg-white p-2 h-[150px] lg:h-[100px] shadow-md rounded-b-md">
-          <p className="font-semibold">{movie.name}</p>
-          <p className="text-sm text-black/50">
-            {movie.known_for?.map((data) => data.title || data.name).join(", ")}
-          </p>
-        </div>
-      </div>
-    ))
-  ) : (
-    <p>loading..</p>
-  )}
-</div> */}
-
+  
 
         </div>
     </div>

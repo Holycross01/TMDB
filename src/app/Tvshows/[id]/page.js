@@ -6,7 +6,7 @@ import { tmdbApi, config } from "@/screen/Lib/Api"; // Add your import
 import Link from 'next/link';
 
 
-const MovieDetails = () => {
+const TvshowDetails = () => {
   const { id } = useParams() 
   const [details, setDetails] = useState(null);
   const [moviecast, setMoviecast] = useState([])
@@ -85,7 +85,7 @@ const MovieDetails = () => {
       Tvshowcast();
       Fetchrecommendation();
      
-  }, []);
+  }, [id]);
 
 
 
@@ -392,4 +392,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default TvshowDetails;
